@@ -92,8 +92,8 @@ function calculate(str) {
         if (firstNegative) {
             num1 = "-" + num1;
         }
-        num1 = isInt(num1);
-        var num2 = isInt(numbers[1]);
+        num1 = toNumber(num1);
+        var num2 = toNumber(numbers[1]);
         if (isNaN(num2)) {
             return num1;
         } else if (num2 === 0 && operator === "/") {
@@ -124,7 +124,7 @@ function calculate(str) {
  * Insert a string number and return Integer or Float 
  * @param {number} x 
  */
-function isInt(x) {
+function toNumber(x) {
     if (Number.isSafeInteger(x)) {
         return Number.parseInt(x);
     } else {
